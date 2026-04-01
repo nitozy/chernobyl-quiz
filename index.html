@@ -152,6 +152,23 @@
             text-align: left;
         }
 
+        .question-text {
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid var(--text-color);
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--text-color); }
+        }
+
         .options label {
             display: block;
             margin: 10px 0;
@@ -211,24 +228,6 @@
             vertical-align: middle;
         }
 
-        /* Ефект друкарської машинки */
-        .typewriter {
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: .15em solid var(--text-color);
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--text-color); }
-        }
-
         /* Радіаційна шкала */
         .radiation-bar {
             width: 100%;
@@ -250,6 +249,7 @@
             padding-right: 10px;
             color: white;
             font-weight: bold;
+            line-height: 20px;
         }
 
         .radiation-status {
@@ -284,7 +284,7 @@
         <div class="container" id="container">
             <header>
                 <div class="stamp">ЦІЛКОМ ТАЄМНО</div>
-                <h1 id="main-title" class="typewriter">АРХІВНА СПРАВА "ЧАЄС"</h1>
+                <h1 id="main-title" class="question-text">АРХІВНА СПРАВА "ЧАЄС"</h1>
                 <p>ПЕРЕВІРКА ЗНАНЬ ПЕРСОНАЛУ | 1986-2024<span class="cursor"></span></p>
             </header>
 
@@ -292,119 +292,119 @@
                 <!-- Блок 1 -->
                 <div class="block-title">Блок 1: Технічні деталі</div>
                 
-                <div class="question typewriter" id="q1-text">
-                    <p>1. Який саме експеримент проводили на 4-му енергоблоці?</p>
+                <div class="question">
+                    <p class="question-text">1. Який саме експеримент проводили на 4-му енергоблоці?</p>
                     <div class="options">
-                        <label><input type="radio" name="q1" value="0"> А) Тестування максимальної потужності</label>
-                        <label><input type="radio" name="q1" value="1"> Б) Випробування режиму «вибігу» ротора</label>
-                        <label><input type="radio" name="q1" value="0"> В) Перевірка системи автоматичного гасіння</label>
-                        <label><input type="radio" name="q1" value="0"> Г) Планова заміна палива</label>
+                        <label><input type="radio" name="q1" value="0" onclick="playGeigerClick()"> А) Тестування максимальної потужності</label>
+                        <label><input type="radio" name="q1" value="1" onclick="playGeigerClick()"> Б) Випробування режиму «вибігу» ротора</label>
+                        <label><input type="radio" name="q1" value="0" onclick="playGeigerClick()"> В) Перевірка системи автоматичного гасіння</label>
+                        <label><input type="radio" name="q1" value="0" onclick="playGeigerClick()"> Г) Планова заміна палива</label>
                     </div>
                 </div>
 
-                <div class="question typewriter" id="q2-text">
-                    <p>2. О котрій годині та хвилині стався перший вибух?</p>
+                <div class="question">
+                    <p class="question-text">2. О котрій годині та хвилині стався перший вибух?</p>
                     <div class="options">
-                        <label><input type="radio" name="q2" value="0"> А) 00:00</label>
-                        <label><input type="radio" name="q2" value="0"> Б) 01:21</label>
-                        <label><input type="radio" name="q2" value="1"> В) 01:23</label>
-                        <label><input type="radio" name="q2" value="0"> Г) 02:30</label>
+                        <label><input type="radio" name="q2" value="0" onclick="playGeigerClick()"> А) 00:00</label>
+                        <label><input type="radio" name="q2" value="0" onclick="playGeigerClick()"> Б) 01:21</label>
+                        <label><input type="radio" name="q2" value="1" onclick="playGeigerClick()"> В) 01:23</label>
+                        <label><input type="radio" name="q2" value="0" onclick="playGeigerClick()"> Г) 02:30</label>
                     </div>
                 </div>
 
-                <div class="question typewriter" id="q3-text">
-                    <p>3. Що використовувалося в реакторі РБМК-1000 як сповільнювач нейтронів?</p>
+                <div class="question">
+                    <p class="question-text">3. Що використовувалося в реакторі РБМК-1000 як сповільнювач нейтронів?</p>
                     <div class="options">
-                        <label><input type="radio" name="q3" value="0"> А) Важка вода</label>
-                        <label><input type="radio" name="q3" value="1"> Б) Графіт</label>
-                        <label><input type="radio" name="q3" value="0"> В) Рідкий натрій</label>
-                        <label><input type="radio" name="q3" value="0"> Г) Бетон</label>
+                        <label><input type="radio" name="q3" value="0" onclick="playGeigerClick()"> А) Важка вода</label>
+                        <label><input type="radio" name="q3" value="1" onclick="playGeigerClick()"> Б) Графіт</label>
+                        <label><input type="radio" name="q3" value="0" onclick="playGeigerClick()"> В) Рідкий натрій</label>
+                        <label><input type="radio" name="q3" value="0" onclick="playGeigerClick()"> Г) Бетон</label>
                     </div>
                 </div>
 
                 <!-- Блок 2 -->
                 <div class="block-title">Блок 2: Ліквідація</div>
 
-                <div class="question typewriter" id="q4-text">
-                    <p>4. Хто першим прибув на місце аварії?</p>
+                <div class="question">
+                    <p class="question-text">4. Хто першим прибув на місце аварії?</p>
                     <div class="options">
-                        <label><input type="radio" name="q4" value="0"> А) Військові хімзахисту</label>
-                        <label><input type="radio" name="q4" value="1"> Б) Караул В. Правика</label>
-                        <label><input type="radio" name="q4" value="0"> В) Персонал сусідніх блоків</label>
-                        <label><input type="radio" name="q4" value="0"> Г) Іноземні фахівці</label>
+                        <label><input type="radio" name="q4" value="0" onclick="playGeigerClick()"> А) Військові хімзахисту</label>
+                        <label><input type="radio" name="q4" value="1" onclick="playGeigerClick()"> Б) Караул В. Правика</label>
+                        <label><input type="radio" name="q4" value="0" onclick="playGeigerClick()"> В) Персонал сусідніх блоків</label>
+                        <label><input type="radio" name="q4" value="0" onclick="playGeigerClick()"> Г) Іноземні фахівці</label>
                     </div>
                 </div>
 
-                <div class="question typewriter" id="q5-text">
-                    <p>5. Найбільш небезпечний ізотоп у перші тижні (щитоподібна залоза):</p>
+                <div class="question">
+                    <p class="question-text">5. Найбільш небезпечний ізотоп у перші тижні (щитоподібна залоза):</p>
                     <div class="options">
-                        <label><input type="radio" name="q5" value="0"> А) Цезій-137</label>
-                        <label><input type="radio" name="q5" value="0"> Б) Стронцій-90</label>
-                        <label><input type="radio" name="q5" value="1"> В) Йод-131</label>
-                        <label><input type="radio" name="q5" value="0"> Г) Плутоній-239</label>
+                        <label><input type="radio" name="q5" value="0" onclick="playGeigerClick()"> А) Цезій-137</label>
+                        <label><input type="radio" name="q5" value="0" onclick="playGeigerClick()"> Б) Стронцій-90</label>
+                        <label><input type="radio" name="q5" value="1" onclick="playGeigerClick()"> В) Йод-131</label>
+                        <label><input type="radio" name="q5" value="0" onclick="playGeigerClick()"> Г) Плутоній-239</label>
                     </div>
                 </div>
 
-                <div class="question typewriter" id="q6-text">
-                    <p>6. Як скидали графіт з даху?</p>
+                <div class="question">
+                    <p class="question-text">6. Як скидали графіт з даху?</p>
                     <div class="options">
-                        <label><input type="radio" name="q6" value="0"> А) Німецькі роботи</label>
-                        <label><input type="radio" name="q6" value="0"> Б) Бульдозери СРСР</label>
-                        <label><input type="radio" name="q6" value="0"> В) Гелікоптери</label>
-                        <label><input type="radio" name="q6" value="1"> Г) Усе вищеперелічене та «біороботи»</label>
+                        <label><input type="radio" name="q6" value="0" onclick="playGeigerClick()"> А) Німецькі роботи</label>
+                        <label><input type="radio" name="q6" value="0" onclick="playGeigerClick()"> Б) Бульдозери СРСР</label>
+                        <label><input type="radio" name="q6" value="0" onclick="playGeigerClick()"> В) Гелікоптери</label>
+                        <label><input type="radio" name="q6" value="1" onclick="playGeigerClick()"> Г) Усе вищеперелічене та «біороботи»</label>
                     </div>
                 </div>
 
                 <!-- Блок 3 -->
                 <div class="block-title">Блок 3: Зона відчуження</div>
 
-                <div class="question typewriter" id="q7-text">
-                    <p>7. Через скільки годин оголосили евакуацію Прип’яті?</p>
+                <div class="question">
+                    <p class="question-text">7. Через скільки годин оголосили евакуацію Прип’яті?</p>
                     <div class="options">
-                        <label><input type="radio" name="q7" value="0"> А) 2 години</label>
-                        <label><input type="radio" name="q7" value="0"> Б) 12 годин</label>
-                        <label><input type="radio" name="q7" value="1"> В) 36 годин</label>
-                        <label><input type="radio" name="q7" value="0"> Г) 3 доби</label>
+                        <label><input type="radio" name="q7" value="0" onclick="playGeigerClick()"> А) 2 години</label>
+                        <label><input type="radio" name="q7" value="0" onclick="playGeigerClick()"> Б) 12 годин</label>
+                        <label><input type="radio" name="q7" value="1" onclick="playGeigerClick()"> В) 36 годин</label>
+                        <label><input type="radio" name="q7" value="0" onclick="playGeigerClick()"> Г) 3 доби</label>
                     </div>
                 </div>
 
-                <div class="question typewriter" id="q8-text">
-                    <p>8. Найбільш радіоактивний об'єкт у підвалі медсанчастини №126:</p>
+                <div class="question">
+                    <p class="question-text">8. Найбільш радіоактивний об'єкт у підвалі медсанчастини №126:</p>
                     <div class="options">
-                        <label><input type="radio" name="q8" value="0"> А) Операційний стіл</label>
-                        <label><input type="radio" name="q8" value="1"> Б) Одяг перших пожежників</label>
-                        <label><input type="radio" name="q8" value="0"> В) Аптечки ЦО</label>
-                        <label><input type="radio" name="q8" value="0"> Г) Іграшки</label>
+                        <label><input type="radio" name="q8" value="0" onclick="playGeigerClick()"> А) Операційний стіл</label>
+                        <label><input type="radio" name="q8" value="1" onclick="playGeigerClick()"> Б) Одяг перших пожежників</label>
+                        <label><input type="radio" name="q8" value="0" onclick="playGeigerClick()"> В) Аптечки ЦО</label>
+                        <label><input type="radio" name="q8" value="0" onclick="playGeigerClick()"> Г) Іграшки</label>
                     </div>
                 </div>
 
-                <div class="question typewriter" id="q9-text">
-                    <p>9. Назва конструкції, встановленої у 2016 році:</p>
+                <div class="question">
+                    <p class="question-text">9. Назва конструкції, встановленої у 2016 році:</p>
                     <div class="options">
-                        <label><input type="radio" name="q9" value="0"> А) Кокон</label>
-                        <label><input type="radio" name="q9" value="1"> Б) Новий безпечний конфайнмент (Арка)</label>
-                        <label><input type="radio" name="q9" value="0"> В) Саркофаг-2</label>
-                        <label><input type="radio" name="q9" value="0"> Г) Сталевий щит</label>
+                        <label><input type="radio" name="q9" value="0" onclick="playGeigerClick()"> А) Кокон</label>
+                        <label><input type="radio" name="q9" value="1" onclick="playGeigerClick()"> Б) Новий безпечний конфайнмент (Арка)</label>
+                        <label><input type="radio" name="q9" value="0" onclick="playGeigerClick()"> В) Саркофаг-2</label>
+                        <label><input type="radio" name="q9" value="0" onclick="playGeigerClick()"> Г) Сталевий щит</label>
                     </div>
                 </div>
 
-                <div class="question typewriter" id="q10-text">
-                    <p>10. Тварина з Червоної книги, що розмножилася в Зоні:</p>
+                <div class="question">
+                    <p class="question-text">10. Тварина з Червоної книги, що розмножилася в Зоні:</p>
                     <div class="options">
-                        <label><input type="radio" name="q10" value="0"> А) Білий ведмідь</label>
-                        <label><input type="radio" name="q10" value="0"> Б) Тигр</label>
-                        <label><input type="radio" name="q10" value="1"> В) Кінь Пржевальського</label>
-                        <label><input type="radio" name="q10" value="0"> Г) Слон</label>
+                        <label><input type="radio" name="q10" value="0" onclick="playGeigerClick()"> А) Білий ведмідь</label>
+                        <label><input type="radio" name="q10" value="0" onclick="playGeigerClick()"> Б) Тигр</label>
+                        <label><input type="radio" name="q10" value="1" onclick="playGeigerClick()"> В) Кінь Пржевальського</label>
+                        <label><input type="radio" name="q10" value="0" onclick="playGeigerClick()"> Г) Слон</label>
                     </div>
                 </div>
 
-                <div class="question typewriter" id="q11-text" style="border-color: var(--accent-color);">
-                    <p>⭐ ФІНАЛ: Що таке «Слонова нога»?</p>
+                <div class="question" style="border-color: var(--accent-color);">
+                    <p class="question-text">⭐ ФІНАЛ: Що таке «Слонова нога»?</p>
                     <div class="options">
-                        <label><input type="radio" name="q11" value="0"> А) Деформована опора</label>
-                        <label><input type="radio" name="q11" value="1"> Б) Застигла маса палива та бетону</label>
-                        <label><input type="radio" name="q11" value="0"> В) Назва робота</label>
-                        <label><input type="radio" name="q11" value="0"> Г) Прізвисько інженера</label>
+                        <label><input type="radio" name="q11" value="0" onclick="playGeigerClick()"> А) Деформована опора</label>
+                        <label><input type="radio" name="q11" value="1" onclick="playGeigerClick()"> Б) Застигла маса палива та бетону</label>
+                        <label><input type="radio" name="q11" value="0" onclick="playGeigerClick()"> В) Назва робота</label>
+                        <label><input type="radio" name="q11" value="0" onclick="playGeigerClick()"> Г) Прізвисько інженера</label>
                     </div>
                 </div>
 
@@ -421,32 +421,92 @@
     </div>
 
     <!-- Звуки -->
-    <audio id="geigerSound" preload="auto">
-        <source src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAA" type="audio/wav">
-    </audio>
-    <audio id="geigerLongSound" preload="auto">
-        <source src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAA" type="audio/wav">
-    </audio>
+    <audio id="geigerClick" src="https://assets.mixkit.co/sfx/preview/mixkit-geiger-counter-click-1193.mp3" preload="auto"></audio>
+    <audio id="geigerLong" src="https://assets.mixkit.co/sfx/preview/mixkit-geiger-counter-fast-beeping-1194.mp3" preload="auto"></audio>
 
-    <script>
-        // Ефект друкарської машинки
-        function typewriterEffect(elementId, text, speed = 70) {
-            const element = document.getElementById(elementId);
-            element.innerHTML = '';
-            let i = 0;
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
+<script>
+        // Звук клика дозиметра
+        function playGeigerClick() {
+            const audio = document.getElementById('geigerClick');
+            if (audio) {
+                audio.currentTime = 0;
+                audio.play().catch(e => console.log("Sound blocked by browser"));
             }
-            type();
         }
 
-        // Ініціалізація тексту
-        const titles = {
-            main: "АРХІВНА СПРАВА \"ЧАЕС\"",
-            q1: "1. Який саме експеримент проводили на 4-му енергоблоці?",
-            q2: "2. О котрій годині та хвилині стався перший вибух?",
-            q3: "3. Що використовувалося в реакторі РБМК-1000 як сповіль
+        // Обработка результатов теста
+        function checkQuiz() {
+            const container = document.getElementById('container');
+            container.classList.add('glitch-active');
+            setTimeout(() => container.classList.remove('glitch-active'), 500);
+
+            const form = document.getElementById('quizForm');
+            const results = document.getElementById('results');
+            const radiationLevelEl = document.getElementById('radiationLevel');
+            const radiationStatusEl = document.getElementById('radiationStatus');
+
+            let correctAnswers = 0;
+            const totalQuestions = 11;
+
+            // Считаем правильные ответы
+            const formData = new FormData(form);
+            for (let i = 1; i <= totalQuestions; i++) {
+                if (formData.get('q' + i) === "1") {
+                    correctAnswers++;
+                }
+            }
+
+            const wrongAnswers = totalQuestions - correctAnswers;
+            
+            // ИСПРАВЛЕННЫЙ РАСЧЕТ ШКАЛЫ:
+            // Процент заполнения (сколько ошибок из общего числа)
+            const errorPercentage = (wrongAnswers / totalQuestions) * 100;
+            const radiationValue = wrongAnswers * 123; // Просто красивое число рентген
+
+            // Обновление шкалы (двигаем черную плашку, которая "открывает" градиент)
+            // В твоем CSS .radiation-level — это плашка ПОВЕРХ градиента. 
+            // Чтобы показать радиацию, плашка должна УМЕНЬШАТЬСЯ.
+            radiationLevelEl.style.width = (100 - errorPercentage) + "%";
+            radiationLevelEl.textContent = `${radiationValue} mR/h`;
+
+            // Установка статуса
+            let statusMessage = '';
+            let color = '#33ff33';
+
+            if (wrongAnswers === 0) {
+                statusMessage = 'ФОН У НОРМІ. ВАС ДОПУЩЕНО ДО ПУЛЬТА.';
+                color = '#33ff33';
+            } else if (wrongAnswers <= 4) {
+                statusMessage = 'УВАГА! ПЕРЕВИЩЕННЯ ДОПУСТИМОЇ ДОЗИ.';
+                color = 'yellow';
+            } else {
+                statusMessage = 'КРИТИЧНЕ ОПРОМІНЕННЯ. ОБ\'ЄКТ ЕВАКУЙОВАНО!';
+                color = 'red';
+            }
+
+            radiationStatusEl.textContent = statusMessage;
+            radiationStatusEl.style.color = color;
+            radiationLevelEl.style.width = errorPercentage + "%";
+
+            // Звук
+            const longAudio = document.getElementById('geigerLong');
+            if (longAudio) {
+                longAudio.currentTime = 0;
+                longAudio.play().catch(e => console.log("Sound blocked"));
+                setTimeout(() => longAudio.pause(), 2000);
+            }
+
+            // Результаты
+            results.style.display = 'block';
+            results.innerHTML = `
+                <hr style="border: 1px dashed var(--text-color)">
+                <h3>ЗВІТ СФОРМОВАНО:</h3>
+                <p>ВІРНИХ ВІДПОВІДЕЙ: ${correctAnswers} / ${totalQuestions}</p>
+                <p>СТАТУС: ${wrongAnswers === 0 ? "БЕЗПЕЧНО" : "НЕБЕЗПЕЧНО"}</p>
+            `;
+            
+            results.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
